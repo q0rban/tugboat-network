@@ -1,0 +1,14 @@
+services:
+  dark:
+    image: tugboatqa/php:7-apache
+    default: true
+    depends: light
+    commands:
+      build:
+        - ln -snf $TUGBOAT_ROOT/dark $DOCROOT
+  light:
+    image: tugboatqa/php:7-apache
+    expose: 80
+    commands:
+      build:
+        - ln -snf $TUGBOAT_ROOT/light $DOCROOT
