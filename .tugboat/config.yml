@@ -9,6 +9,7 @@ services:
   light:
     image: tugboatqa/php:7-apache
     expose: 80
+    checkout: true
     commands:
       build:
         - ln -snf $TUGBOAT_ROOT/light $DOCROOT
